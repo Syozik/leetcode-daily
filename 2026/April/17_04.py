@@ -5,7 +5,7 @@
 # 0 <= i < j < nums.length, and reverse(nums[i]) == nums[j], where reverse(x)
 # denotes the integer formed by reversing the digits of x. Leading zeros are
 # omitted after reversing, for example reverse(120) = 21.
-# 
+#
 # Return the minimum absolute distance between the indices of any mirror pair. The absolute distance between indices i and j is abs(i - j). If no mirror pair exists, return -1.
 
 class Solution:
@@ -22,12 +22,11 @@ class Solution:
         for i in range(len(nums)):
             if nums[i] in reversed_nums:
                 res = min(res, i - reversed_nums[nums[i]])
-        
+
             reversed_nums[reverse(nums[i])] = i
         return res if res != float("inf") else -1
 
-# Topics: Array, Hash Table, Math
+# <Medium> Topics: Array, Hash Table, Math
 
 # Runtime 297ms Beats 44.57%
 # Memory 41.90mb Beats 73.64%
-
